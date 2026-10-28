@@ -1,0 +1,68 @@
+import java.util.Scanner;
+
+public class hometask2 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("=== AQLLI KALKULYATOR ===");
+        System.out.print("Birinchi sonni kiriting: ");
+        double a = scanner.nextDouble();
+
+        System.out.print("Amalni kiriting (+, -, *, /, %): ");
+        char amal = scanner.next().charAt(0); // charAt(0) - birinchi harfni oladi
+
+        System.out.print("Ikkinchi sonni kiriting: ");
+        double b = scanner.nextDouble();
+
+        switch (amal) {
+            case '+':
+                System.out.println("Natija: " + (a + b));
+                break;
+            case '-':
+                System.out.println("Natija: " + (a - b));
+                break;
+            case '*':
+                System.out.println("Natija: " + (a * b));
+                break;
+            case '/':
+                if (b != 0) {
+                    System.out.println("Natija: " + (a / b));
+                } else {
+                    System.out.println("Xatolik: Sonni nolga bo'lib bo'lmaydi!");
+                }
+                break;
+            case '%':
+                System.out.println("Bo'lishdan qolgan qoldiq: " + (a % b));
+                break;
+            default:
+                System.out.println("Xato amal kiritildi!");
+        }
+    }
+}
+
+
+
+ class hometask {
+    public static int fibonacciYigindi(int n) {
+        if (n <= 0) return 0;
+        if (n == 1) return 1;
+
+        int sum = 1;
+        int first = 0;
+        int second = 1;
+
+        for (int i = 2; i <= n; i++) {
+            int temp = first + second;
+            first = second;
+            second = temp;
+            sum += temp;
+        }
+
+        return sum;
+    }
+
+    public static void main(String[] args) {
+        int n = 7;
+        System.out.println(n + "-elementgacha Fibonacci yig'indisi: " + fibonacciYigindi(n));
+    }
+}
